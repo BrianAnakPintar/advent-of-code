@@ -5,6 +5,7 @@ import (
   "os"
   "strconv"
   "aoc/day1"
+  "aoc/day2"
 )
 
 func main() {
@@ -22,6 +23,8 @@ func main() {
   switch day {
     case 1:
       day1.Run()
+    case 2:
+      day2.Run()
     default:
       fmt.Printf("Day %d is not implemented yet\n", day)
   }

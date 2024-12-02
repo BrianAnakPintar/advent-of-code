@@ -42,3 +42,10 @@ func ReadFileLines(filename string) ([]string, error) {
 
 	return lines, nil
 }
+
+func AbsDiff(num1 int, num2 int) int {
+  if num1 < num2 {
+    return num2 - num1;
+  }
+  return num1 - num2;
+}

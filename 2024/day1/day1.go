@@ -9,9 +9,10 @@ import (
 )
 
 type IntHeap []int
-func (h IntHeap) Len() int { return len(h) }
+
+func (h IntHeap) Len() int           { return len(h) }
 func (h IntHeap) Less(i, j int) bool { return h[i] < h[j] }
-func (h IntHeap) Swap(i, j int) { h[i], h[j] = h[j], h[i] }
+func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
 func (h *IntHeap) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
@@ -66,14 +67,14 @@ func Run() {
 		num1 := heap.Pop(h1).(int)
 		num2 := heap.Pop(h2).(int)
 		diff := float64(num1 - num2)
-    if diff < 0 {
-      diff *= -1
-    }
+		if diff < 0 {
+			diff *= -1
+		}
 		sum += int(diff)
 	}
 	fmt.Println(sum)
 
-  PartTwo()
+	PartTwo()
 }
 
 func PartTwo() {
@@ -83,8 +84,8 @@ func PartTwo() {
 		return
 	}
 
-  var list_one []int
-  occurences := make(map[int]int, 1000)
+	var list_one []int
+	occurences := make(map[int]int, 1000)
 	for _, line := range lines {
 		parts := strings.Fields(line)
 		if len(parts) != 2 {
@@ -105,14 +106,14 @@ func PartTwo() {
 			return
 		}
 
-    list_one = append(list_one, num1)
-    occurences[num2]++
+		list_one = append(list_one, num1)
+		occurences[num2]++
 	}
 
-  similarity_score := 0
-  for _, val := range list_one {
-    similarity_score += val * occurences[val]
-  }
-  fmt.Println("PART TWO")
-  fmt.Println(similarity_score)
+	similarity_score := 0
+	for _, val := range list_one {
+		similarity_score += val * occurences[val]
+	}
+	fmt.Println("PART TWO")
+	fmt.Println(similarity_score)
 }

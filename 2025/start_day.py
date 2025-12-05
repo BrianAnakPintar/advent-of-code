@@ -15,6 +15,7 @@ def create_day(day_num):
     
     # Create solution.py with template
     solution_path = os.path.join(base_path, "main.py")
+    open(solution_path, 'a').close()
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

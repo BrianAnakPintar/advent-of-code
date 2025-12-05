@@ -5,6 +5,11 @@ import (
 	"os"
 )
 
+type Vec2 struct {
+  X int
+  Y int
+}
+
 /*
   ReadFile reads a file and outputs a single continuous string
   of the contents of said file.
